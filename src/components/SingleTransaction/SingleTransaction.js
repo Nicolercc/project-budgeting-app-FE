@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
 
 function SingleTransaction({ transactionList, setTransactionList }) {
   const { id } = useParams();
@@ -23,7 +22,7 @@ function SingleTransaction({ transactionList, setTransactionList }) {
     if (transactionList.length > 0 && !singleTransaction) {
       setSingleTransaction(transactionList.find((t) => t.id === id));
     }
-  }, [transactionList]);
+  }, [transactionList, id, singleTransaction]);
 
   // async function fetchSingleTransaction() {
   //   try {

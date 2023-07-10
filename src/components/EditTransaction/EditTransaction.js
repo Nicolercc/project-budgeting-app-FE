@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 // import { formatDate } from "../Home/Home";
 import { v4 as uuidv4 } from "uuid";
