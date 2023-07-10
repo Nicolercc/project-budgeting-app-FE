@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-// import { formatDate } from "../Home/Home";
 import { v4 as uuidv4 } from "uuid";
 
 function EditTransaction({ transactionList, setTransactionList }) {
@@ -16,50 +15,10 @@ function EditTransaction({ transactionList, setTransactionList }) {
 
   const [category, setCategory] = useState("");
 
-  // async function handleFetchData() {
-  //   // const formattedDate = formatDate(date);
-  //   try {
-  //     let response = await axios.put(
-  //       `http://localhost:3001/transactions/update-transaction/${id}`
-  //     );
-
-  //     const {
-  //       item_name,
-  //       date,
-  //       amount,
-  //       from,
-  //       category,
-  //       id: transactionId,
-  //     } = response.data.data;
-
-  //     // setDate(formattedDate || "");
-  //     setName(item_name || "");
-  //     setAmount(amount || "");
-  //     setFrom(from || "");
-  //     setCategory(category || "");
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
-  // useEffect(() => {
-  //   handleFetchData();
-  // }, [id]);
-
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
-      // const response = await axios.put(
-      //   `http://localhost:3001/transactions/update-transaction/${id}`,
-      // {
-      //   date,
-      //   item_name: name,
-      //   amount,
-      //   from,
-      //   category,
-      // }
-      // );
-
       const updatedTransaction = {
         id: uuidv4(),
         date,
@@ -71,7 +30,6 @@ function EditTransaction({ transactionList, setTransactionList }) {
       const newTransactionList = transactionList.filter((t) => t.id !== id);
 
       setTransactionList([updatedTransaction, ...newTransactionList]);
-      // console.log({ data: response.data.data });
 
       setDate("");
       setName("");

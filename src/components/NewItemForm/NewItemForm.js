@@ -17,18 +17,17 @@ function NewItemForm({ setTransactionList, transactionList }) {
       [e.target.name]: e.target.value,
     });
   }
-  //post request not working, por que?
+
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
       const response = await axios.post(
-        `http://localhost:3001/transactions/create-transactions`,
+        `${process.env.BACKEND_DOMAIN || "http://localhost:3001"}/transactions`,
         formData
       );
 
       setTransactionList([response.data.data, ...transactionList]);
-      // console.log({ data: response.data.data });
 
       setFormData({
         item_name: "",
@@ -92,14 +91,6 @@ function NewItemForm({ setTransactionList, transactionList }) {
         </div>
         <div className="m-5">
           <label htmlFor="category">Category</label>
-          {/* <input
-            type="text"
-            value={formData.from}
-            id="from"
-            name="from"
-            className="form-control form-control-lg"
-            onChange={handleChange}
-          /> */}
           <select
             id="category"
             name="category"

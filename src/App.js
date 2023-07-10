@@ -9,13 +9,6 @@ import Total from "./components/Total/Total";
 import EditTransaction from "./components/EditTransaction/EditTransaction";
 import "./App.css";
 
-/**
- * TODO:
- *
- *
- *
- */
-
 function App() {
   const [transactionList, setTransactionList] = useState([]);
 
@@ -39,6 +32,8 @@ function App() {
     <Router>
       <>
         <Nav />
+        <p>Something</p>
+        <p>node env var here: {process.env.BACKEND_DOMAIN}</p>
         <Total transactionsArray={transactionList} />
         <Routes>
           <Route

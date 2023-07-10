@@ -3,14 +3,6 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 
 function Home({ transactionsArray }) {
-  /**
-   * component lifecycle:
-   *
-   * Component Mounts - component is first rendered
-   * Component Updates - component is already rendered, but one of its props have changed
-   * Component Unmounts - component was rendered, but now is going to be removed from the DOM
-   */
-
   function formatDate(dateString) {
     const options = { month: "long", day: "numeric" };
     const date = new Date(dateString);
