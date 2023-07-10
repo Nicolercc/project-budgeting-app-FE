@@ -15,7 +15,9 @@ function App() {
   async function fetchTransactions() {
     try {
       let result = await axios.get(
-        `${process.env.BACKEND_DOMAIN || "http://localhost:3001"}/transactions`
+        `${
+          process.env.REACT_APP_BACKEND_DOMAIN || "http://localhost:3001"
+        }/transactions`
       );
 
       setTransactionList(result.data);

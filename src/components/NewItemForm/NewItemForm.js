@@ -23,7 +23,9 @@ function NewItemForm({ setTransactionList, transactionList }) {
 
     try {
       const response = await axios.post(
-        `${process.env.BACKEND_DOMAIN || "http://localhost:3001"}/transactions`,
+        `${
+          process.env.REACT_APP_BACKEND_DOMAIN || "http://localhost:3001"
+        }/transactions`,
         formData
       );
 
