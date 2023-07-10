@@ -33,7 +33,7 @@ function App() {
       <>
         <Nav />
         <p>Something</p>
-        <p>node env var here: {process.env.BACKEND_DOMAIN}</p>
+        <p>node env var here: {process.env.REACT_APP_BACKEND_DOMAIN}</p>
         <Total transactionsArray={transactionList} />
         <Routes>
           <Route
