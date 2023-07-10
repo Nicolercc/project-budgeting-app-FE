@@ -18,27 +18,27 @@ function EditTransaction({ transactionList, setTransactionList }) {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    try {
-      const updatedTransaction = {
-        id: uuidv4(),
-        date,
-        item_name: name,
-        amount,
-        from,
-        category,
-      };
-      const newTransactionList = transactionList.filter((t) => t.id !== id);
+    // try {
+    const updatedTransaction = {
+      id: uuidv4(),
+      date,
+      item_name: name,
+      amount,
+      from,
+      category,
+    };
+    const newTransactionList = transactionList.filter((t) => t.id !== id);
 
-      setTransactionList([updatedTransaction, ...newTransactionList]);
+    setTransactionList([updatedTransaction, ...newTransactionList]);
 
-      setDate("");
-      setName("");
-      setAmount("");
-      setFrom("");
-      setCategory("");
-    } catch (e) {
-      console.log(e);
-    }
+    setDate("");
+    setName("");
+    setAmount("");
+    setFrom("");
+    setCategory("");
+    // } catch (e) {
+    //   console.log(e);
+    // }
   }
 
   return (

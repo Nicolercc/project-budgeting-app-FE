@@ -34,8 +34,6 @@ function App() {
     <Router>
       <>
         <Nav />
-        <p>Something</p>
-        <p>node env var here: {process.env.REACT_APP_BACKEND_DOMAIN}</p>
         <Total transactionsArray={transactionList} />
         <Routes>
           <Route
